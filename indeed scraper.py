@@ -32,7 +32,7 @@ def crawlURL(path):
     return pageContent
 
 def linkGenerator(age):
-    URLlist = ['https://de.indeed.com/Jobs?as_and=&as_phr=&as_any=&as_not=&as_ttl=&as_cmp=&st=&as_src=&radius=25&l=Deutschland&fromage='+str(days)+'&limit=10&sort=&psf=advsrch&from=advancedsearch' for days in range(1, age)]
+    URLlist = ['https://de.indeed.com/Jobs?as_and=&as_phr=&as_any=&as_not=&as_ttl=&as_cmp=&st=&as_src=&radius=25&l=Deutschland&fromage='+str(days)+'&limit=10&sort=&psf=advsrch&from=advancedsearch' for days in range(0, age)]
     return URLlist
 
 s = requests.Session()
@@ -42,11 +42,11 @@ s.headers.update({'accept':'text/html,application/xhtml+xml,application/xml;q=0.
 s.headers.update({'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36'})
 
 # save file
-FileOut = open('C:/Users/AGrze/Documents/Data Science Bootcamp/Techlab Project/18-05jobsInfo.txt','w', encoding = 'utf-8') 
+FileOut = open('C:/Users/AGrze/Documents/Data Science Bootcamp/Techlab Project/24-05jobsInfo.txt','w', encoding = 'utf-8') 
 
 counter= 0
 
-for link in linkGenerator(21): 
+for link in linkGenerator(31): 
     counter+=1
     if counter != 1:
         time.sleep(10)
@@ -156,12 +156,12 @@ import ast
 import pandas as pd
 
 dict_list=[]
-with open('18-05jobsInfo.txt','r',encoding='utf-8') as crawl_file:
+with open('24-05jobsInfo.txt','r',encoding='utf-8') as crawl_file:
     line= crawl_file.readline()
     while line:
         dict_list.append(ast.literal_eval(line[:-1]))       
         line = crawl_file.readline()
 
 df = pd.DataFrame(dict_list)
-df.to_excel('18-05jobsInfo.xlsx')
-df.to_csv('18-05jobsInfo.csv')
+df.to_excel('24-05jobsInfo.xlsx')
+df.to_csv('24-05jobsInfo.csv')
