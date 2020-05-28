@@ -1,8 +1,275 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-<p>- List.</p>
+<html lang="en">
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900|Source+Sans+Pro:300,900&display=swap" rel="stylesheet">
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                *,
+                *::before,
+                *::after {
+                 box-sizing: border-box;
+                }
+                :root {
+                    --ff-primary: 'Source Sans Pro', sans-serif;
+                    --ff-secondary: 'Source Code Pro', monospace;
+    
+                    --fw-reg: 300;
+                    --fw-bold: 900;
+    
+                    --clr-light: #fff;
+                    --clr-dark: #303030;
+                    --clr-accent: #16e0bd;
+    
+                    --fs-h1: 3rem;
+                    --fs-h2: 2.25rem;
+                    --fs-h3: 1.25rem;
+                    --fs-body: 1rem;
+  
+                    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25);
+                }
+                body {
+                    background: var(--clr-light);
+                    color: var(--clr-dark);
+                    margin:0;
+                    font-family:var(ff-primary);
+                    font-size:var(fs-body);
+                    line-height: 1.6; /*recommended line-height*/
+                    }
+
+                section {
+                    padding: 3em 2em;
+                    }
+
+                .navbar {
+                    z-index:1;
+                    background-color: var(--clr-dark);
+                    overflow: hidden;
+                    position: sticky;
+                    top: 0px;
+                    margin-bottom: 0 !important;
+                }
+
+                .navbar a {
+                    float: right;
+                    color: var(--clr-light);
+                    padding: 20px;
+                    text-decoration: none;
+                    font-size: 20px;
+                    font-family: var(--ff-primary);
+                }
+
+                .navbar a:hover {
+                    background-color: var(--clr-accent);
+                    color: var(--clr-dark);
+                    transition: 1s;
+                }
+
+                .nav_link {
+                    color: inherit;
+                    font-weight: var(--fw-bold);
+                    font-size: var(--fs-h1);
+                    text-decoration: none;
+                }
+                #home {
+                    background-image: url(https://i.postimg.cc/PxtrY5PS/services-bg.jpg);
+                    background-color: var(--clr-light);
+                    background-size: cover;
+                    color: var(--clr-light);
+                    font-size: var(--fs-h2);
+                }
+                #map_id {
+                    width: 60.0%;
+                    height: 80vh;
+                    top: 0.0%;
+                }
+                .top_companies {
+                    width: 20%;
+                    float: left;
+                }
+                .top_cities {
+                    width: 20%;
+                    float: left;
+                }
+                .city {
+                    width: 100%;
+                    float: left;
+                }
+                .dashboard {
+                    display: flex;
+                    width: 100%;
+                    padding: .6rem 1.5rem 0 1.5rem;
+                }
+                .header {
+                    text-align: center;
+                }
+                
+            </style>
+        
+</head>
+<body>    
+            <div class="navbar">
+                <a href="#contact" class="nav_link">Contact</a>
+                <a href="#insights" class="nav_link">Insights</a>
+                <a href="#home" class="nav_link">Home</a>
+            </div>
+            <section id="home"> 
+                <p>The coronavirus pandemic has affected the world as we know it, and numerous industries and businesses are suffering (or, in some cases, gaining) from its powerful impact. Due to strict measures taken by governments across the globe, most companies are asking their employees to work from home. </p>
+                <h1>The Job Market</h1>
+                 <p>Looking at the job market composition during the COVID-19 pandemic, we can identify three main groups of people:</p>
+                    
+                <h2>1. Those who are looking for a job right now</h2>
+                <p>This refers to people who were either already job seekers before the pandemic, or who have been laid off due to the pandemic.</p>
+                    
+                <h2>2. Those who will need a job in the near future</h2>
+                <p>This refers to people who will lose a job because of the pandemic and potential economic recession in the near future.</p>
+
+                <h2>3. Those looking for a career change</h2>
+                <p>This refers to people who are currently staying at a job but have been thinking about a career change, before or after the arrival of the pandemic.</p>
+
+                <p> If you are employed, your industry is not heavily affected by the crisis and you’re happy at work, then relax. Wash your hands and stay in your home office. :) However, if you are in one of the above categories, read on. </p>
+
+            </section>
+            <section id="insights"> 
+            <p class="header">Where to look for a job in Germany right now</p>
+            <div class="dashboard">
+                <div class="top_companies"><p>Most active companies looking for you right now</p></div>
+                <div class="folium-map" id="map_id" ></div>
+                <div class="top_cities">
+                    <h2>
+                        Three Top Cities
+                    </h2>
+                    <div class="city">
+                        <p>Berlin</p>
+                    </div>
+                    <div class="city">
+                        <p>München</p>
+                    </div>
+                    <div class="city">
+                        <p>Hamburg</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="trendline"><p>How job openings have developed over the past two weeks</p></div>
+            </section>
+            <section id="contact"> </section>
 </body>
 </html>
+<script>    
+    
+            var map_id = L.map(
+                "map_id",
+                {
+                    center: [51.5167, 9.9167],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 6,
+                    zoomControl: false,
+                    preferCanvas: false,
+                    scrollWheelZoom: false,
+                }
+            );
+    
+            var tile_layer_id = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 6, "maxZoom": 6, "minZoom": 6, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_id);
+        
+    
+            var circle_marker_berlin = L.circleMarker(
+                [52.52, 13.405],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.775238095238095, "stroke": true, "weight": 3}
+            ).addTo(map_id);
+        
+    
+            var popup_berlin = L.popup({"maxWidth": "100%"});
+        
+            var berlinContent = '<img src="Berlin.png"/ width="450" height="405">';
+            popup_berlin.setContent(berlinContent);
+
+            circle_marker_berlin.bindPopup(popup_berlin);
+    
+            var circle_marker_2 = L.circleMarker(
+                [48.1351, 11.582],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.447619047619048, "stroke": true, "weight": 3}
+            ).addTo(map_id);
+        
+    
+        var popup_münchen = L.popup({"maxWidth": "100%"});
+
+        
+            var münchenContent = '<img src="München.png"/ width="450" height="405">'; 
+            popup_münchen.setContent(münchenContent);
+        
+
+        circle_marker_2.bindPopup(popup_münchen)
+        ;
+            var circle_marker_95588a2abff04682b727a3b58dd1b7e4 = L.circleMarker(
+                [50.1109, 8.6821],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.12952380952381, "stroke": true, "weight": 3}
+            ).addTo(map_id);
+        
+    
+        var popup_frankfurt = L.popup({"maxWidth": "100%"});
+
+        
+            var frankfurtContent = '<img src="Frankfurt am Main.png"/ width="450" height="405">'; 
+            popup_frankfurt.setContent(frankfurtContent);
+        
+
+        circle_marker_95588a2abff04682b727a3b58dd1b7e4.bindPopup(popup_frankfurt)
+        ;
+
+    
+            var circle_marker_4 = L.circleMarker(
+                [50.9375, 6.9603],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.302857142857143, "stroke": true, "weight": 3}
+            ).addTo(map_id);
+        
+    
+        var popup_köln = L.popup({"maxWidth": "100%"});
+
+        
+            var kölnContent = '<img src="Köln.png"/ width="450" height="405">';
+            popup_köln.setContent(kölnContent);
+        
+
+        circle_marker_4.bindPopup(popup_köln)
+        ;
+    
+            var circle_marker_5 = L.circleMarker(
+                [53.5511, 9.9937],
+                {"bubblingMouseEvents": true, "color": "#3186cc", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3186cc", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12.657142857142858, "stroke": true, "weight": 3}
+            ).addTo(map_id);
+        
+    
+        var popup_hamburg = L.popup({"maxWidth": "100%"});
+
+        
+            var hamburgContent = '<img src="Hamburg.png"/ width="450" height="405">';
+            popup_hamburg.setContent(hamburgContent);
+        
+
+        circle_marker_5.bindPopup(popup_hamburg)
+        ;    
+    
+</script>
