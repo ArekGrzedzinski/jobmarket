@@ -212,9 +212,10 @@
                 </div>
                 </div>
                 <div class="folium-map" id="map_id" ></div>
-                <div class="trendline"><h3>How job openings have developed over the past two weeks</h3>
-                    <button onclick="vollzeit()">Vollzeit</button>
-                    <button onclick="teilzeit()">Teilzeit</button><br><br>
+                <div class="trendline"><h3>How job openings have developed over time</h3>
+                    <button onclick="overall()">All job types</button>
+                    <button onclick="vollzeit()">Full-time</button>
+                    <button onclick="teilzeit()">Part-time</button><br><br>
                     <img id="vollzeit" src="https://i.postimg.cc/k5DkTWLG/daily-new-jobs.png" width="80%"></div>
             </div>
             
@@ -487,6 +488,9 @@
 </body>
 </html>
     <script>
+        function overall() {
+            document.getElementById("vollzeit").src = "https://i.postimg.cc/k5DkTWLG/daily-new-jobs.png";
+        }
         function vollzeit() {
             document.getElementById("vollzeit").src = "https://i.postimg.cc/fRvwG7Hv/vollzeit.png";
         }
