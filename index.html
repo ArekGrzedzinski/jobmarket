@@ -98,16 +98,16 @@
                     font-size: var(--fs-h2);
                 }
                 #map_id {
-                    width: 60.0%;
+                    width: 40.0%;
                     height: 80vh;
                     top: 0.0%;
                 }
                 .top_companies {
-                    width: 20%;
+                    width: 33%;
                     float: left;
                 }
                 .top_cities {
-                    width: 20%;
+                    width: 33%;
                     float: left;
                 }
                 .city {
@@ -118,6 +118,7 @@
                     display: flex;
                     width: 100%;
                     padding: .6rem 1.5rem 0 1.5rem;
+                    border-color: var(--clr-dark);
                 }
                 .jobseeker_type {
                     display: flex;
@@ -125,23 +126,37 @@
                     padding: .6rem 1.5rem 0 1.5rem;
                 }
 
-                .type1 + .type1{
+               /* .type1 + .type1{
                 margin-left: 2em;
-                }
+                } */
 
                 .type1{
-                    margin: 30px;
+                    margin: 35px;
+                    flex:1;
                     border: 5px solid var(--clr-light);
                     background-color: rgba(22,224,189, 0.4); 
                     padding: 10px;
                     border-radius: 20px 20px 20px 20px;
                 }
+
+                .type1 p {
+                    font-size: 80%;
+                }
                 .header {
                     text-align: center;
+                    font-size: var(--fs-h1);
                 }
 
                 .title {
                     text-align: center;
+                }
+
+                .title1 {
+                    text-align: center;
+                }
+
+                .title1{
+                    text-decoration: underline;
                 }
                 
                 #contact {
@@ -158,30 +173,29 @@
             </div>
             <section id="home"> 
                 <p>The coronavirus pandemic has affected the world as we know it, and numerous industries and businesses are suffering (or, in some cases, gaining) from its powerful impact.</p>
-                <h1 class="title"><strong>The Job Market</strong></h1>
+                <h1 class="title1"><strong>The Job Market</strong></h1>
                 <p class="title">Looking at the job market composition during the COVID-19 pandemic, we can identify three main groups of people:</p>
                 <div class="jobseeker_type">
                 <div class="type1">   
-                <h2>1. Those who are looking for a job right now</h2>
+                <h2><strong>1.Those who are looking for a job right now</strong></h2>
                 <p>This refers to people who were either already job seekers before the pandemic, or who have been laid off due to the pandemic.</p></div> 
                 <div class="type1">     
-                <h2>2. Those who will need a job in the near future</h2>
+                <h2><strong>2.Those who will need a job in the near future</strong></h2>
                 <p>This refers to people who will lose a job because of the pandemic and potential economic recession in the near future.</p></div>
                 <div class="type1">
-                <h2>3. Those looking for a career change</h2>
+                <h2><strong>3.Those looking for a career change</strong></h2>
                 <p>This refers to people who are currently staying at a job but have been thinking about a career change, before or after the arrival of the pandemic.</p></div>
                 </div>
                 <p> If you are employed, your industry is not heavily affected by the crisis and you’re happy at work, then relax. Wash your hands and stay in your home office. :) However, if you are in one of the above categories or feel like there are less jobs being posted and that not many positions are entry level, read on to observe the impact of the coronavirus on the job market, and gather some insights. </p>
 
             </section>
             <section id="insights"> 
-            <p class="header">Where to look for a job in Germany right now</p>
+            <p class="header"><strong>Where to look for a job in Germany right now</strong></p>
             <div class="dashboard">
-                <div class="top_companies"><p>Most active companies looking for you right now</p></div>
-                <div class="folium-map" id="map_id" ></div>
-                <div class="top_cities">
+                <div class="top_companies"><p>Most active companies looking for you right now</p>
+                <img src=https://i.postimg.cc/6qYbfSHS/top-companies.png style="vertical-align: bottom; width: 60vh;"><div class="top_cities">
                     <h2>
-                        Three Top Cities
+                        Top 3 Cities
                     </h2>
                     <div class="city">
                         <p>Berlin</p>
@@ -191,11 +205,17 @@
                     </div>
                     <div class="city">
                         <p>Hamburg</p>
-                    </div>
+                    </div> 
                 </div>
+                </div>
+                <div class="folium-map" id="map_id" ></div>
+                <div class="trendline"><p>How job openings have developed over the past two weeks</p>
+                    <button onclick="vollzeit()">Vollzeit</button>
+                    <button onclick="teilzeit()">Teilzeit</button><br>
+                    <img id="vollzeit" src="https://i.postimg.cc/k5DkTWLG/daily-new-jobs.png" width="55%"></div>
             </div>
             
-            <div class="trendline"><p>How job openings have developed over the past two weeks</p></div>
+            
             </section>
 
             <section id="contact"> 
@@ -463,6 +483,14 @@
         </section>
 </body>
 </html>
+    <script>
+        function vollzeit() {
+            document.getElementById("vollzeit").src = "https://i.postimg.cc/fRvwG7Hv/vollzeit.png";
+        }
+        function teilzeit() {
+            document.getElementById("vollzeit").src = "https://i.postimg.cc/FsRgdGSY/teilzeit.png";
+        }
+    </script>
 <script>    
     
             var map_id = L.map(
