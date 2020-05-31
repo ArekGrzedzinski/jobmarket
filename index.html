@@ -107,12 +107,11 @@
                     float: left;
                 }
                 .top_cities {
-                    width: 33%;
-                    float: left;
+                    border-radius: 10px;
+                    background-color: #ffffff;
                 }
                 .city {
                     width: 100%;
-                    float: left;
                 }
                 .dashboard {
                     display: flex;
@@ -167,22 +166,19 @@
                 .trendline {
                     font-size: var(--fs-h3);
                     text-align: center;
+                    background-color: #ffffff;
+                    margin-left: 10px;
+                    border-radius: 10px;
                 }
                 .trendline p {
                     font-size: 15px;
-                    border-style: dashed;
-                    border-width:1.5px;
-                    border-color:black;
                     width: 450px;
                     height: 50px;
-                    padding:10px;
+                    padding: 10px;
                     margin-left: 40px;
                 }
                 .top_companies p {
                     font-size: 15px;
-                    border-style: dashed;
-                    border-width:1.5px;
-                    border-color:black;
                     width: 450px;
                     height: 50px;
                     padding:10px;
@@ -191,9 +187,6 @@
 
                 .top_cities h2 {
                     font-size: 15px;
-                    border-style: dashed;
-                    border-width:1.5px;
-                    border-color:black;
                     width: 450px;
                     height: 50px;
                     padding:10px;
@@ -202,9 +195,6 @@
 
                 .top_cities p {
                     font-size: 15px;
-                    border-style: solid;
-                    border-width:1px;
-                    border-color:black;
                     width: 200px;
                     height: 50px;
                     padding:10px;
@@ -213,7 +203,15 @@
                 }
                 .top_companies {
                     text-align: center;
+                    margin-right: 10px;
+                    border-radius: 10px;
                 }
+                .company_graph {
+                    background-color: #ffffff;
+                    border-radius: 10px;
+                }
+
+                
 
                 button {
                     border-radius: 12px;
@@ -262,6 +260,9 @@
                     margin-right: 15%;
                     margin-bottom: 5%;
                 }
+                .insights {
+                    background-color: #f4f4f4;
+                }
 
             </style>
         
@@ -271,7 +272,6 @@
                 <a href="#contact" class="nav_link">Contact</a>
                 <a href="#insights" class="nav_link">Insights</a>
                 <a href="#home" class="nav_link">Home</a>
-           
             </div>
             <section id="home"> 
                 <p>The coronavirus pandemic has affected the world as we know it, and numerous industries and businesses are suffering (or, in some cases, gaining) from its powerful impact.</p>
@@ -291,25 +291,28 @@
                 <p> If you are employed, your industry is not heavily affected by the crisis and you’re happy at work, then relax. Wash your hands and stay in your home office. :) However, if you are in one of the above categories or feel like there are less jobs being posted and that not many positions are entry level, read on to observe the impact of the coronavirus on the job market, and gather some insights. </p>
 
             </section>
-            <section id="insights"> 
+            <section id="insights" class="insights"> 
             <p class="header"><strong>Where to look for a job in Germany right now?</strong></p>
             <div class="dashboard">
-                <div class="top_companies"><p><strong>Most active companies looking for you right now</strong></p><br>
-                <img src=https://i.postimg.cc/6qYbfSHS/top-companies.png id="top_companies_img" style="vertical-align: bottom; width: 50vh;">
-                <div class="top_cities">
-                    <h2>
-                        <strong>Top 3 Cities</strong><br>Average number of jobs posted daily
-                    </h2>
-                    <div class="city">
-                        <p>Berlin - 6400</p>
+                <div class="top_companies">
+                    <div class="company_graph">
+                        <p><strong>Most active companies looking for you right now</strong></p><br>
+                        <img src=https://i.postimg.cc/6qYbfSHS/top-companies.png id="top_companies_img" style="vertical-align: bottom; width: 50vh;">
                     </div>
-                    <div class="city">
-                        <p>München - 4329</p>
+                    <div class="top_cities">
+                        <h2>
+                            <strong>Top 3 Cities</strong><br>Average number of jobs posted daily
+                        </h2>
+                        <div class="city">
+                            <p>Berlin - 6400</p>
+                        </div>
+                        <div class="city">
+                            <p>München - 4329</p>
+                        </div>
+                        <div class="city">
+                            <p>Hamburg - 4181</p>
+                        </div> 
                     </div>
-                    <div class="city">
-                        <p>Hamburg - 4181</p>
-                    </div> 
-                </div>
                 </div>
                 <div class="folium-map" id="map_id" ></div>
                 <div class="trendline"><p><strong>How job openings have developed over the past two weeks</strong> </p><br>
