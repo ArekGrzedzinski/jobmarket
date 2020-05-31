@@ -38,7 +38,7 @@
     
                     --clr-light: #fff;
                     --clr-dark: #303030;
-                    --clr-accent: #0e9aa7;
+                    --clr-accent: #3f3f44;
     
                     --fs-h1: 3rem;
                     --fs-h2: 2.25rem;
@@ -164,12 +164,20 @@
                     background-color: var(--clr-accent);
 			color: white;
                 }
+		
+		#country {
+    			width: 100px;
+		}
                 
                 .table, .table td, .table th {
 	                border: 1px solid #949494;
 	                border-collapse: collapse;
 	                text-align: center;
                 }
+		
+		input[type=submit] {
+			color:black
+		}
             </style>
         
 </head>
@@ -258,7 +266,7 @@
                 <label for="email">E-mail:</label><br>
                 <input type="text" id="email" name="email" placeholder="Please write your e-mail here" required><br>
                 <label for="country">Country</label><span style="color: red !important; display: inline; float: none;">*</span>      
-                <select id="country" name="country" class="form-control" style="width: 100px>
+                <select id="country" name="country" class="form-control">
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
