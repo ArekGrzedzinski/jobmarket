@@ -119,6 +119,7 @@
                     width: 100%;
                     padding: .6rem 1.5rem 0 1.5rem;
                     border-color: var(--clr-dark);
+                    text-align: center;
                 }
                 .jobseeker_type {
                     display: flex;
@@ -186,7 +187,7 @@
                     height: 50px;
                     padding:10px;
                     margin-right: 40px;
-                }
+                }                
 
                 .top_cities h2 {
                     font-size: 15px;
@@ -198,6 +199,18 @@
                     padding:10px;
                     margin-right: 40px;
                 }
+
+                .top_cities p {
+                    font-size: 15px;
+                    border-style: solid;
+                    border-width:1px;
+                    border-color:black;
+                    width: 200px;
+                    height: 50px;
+                    padding:10px;
+                    margin-right: 40px;
+                    margin-left: 120px;
+                }
                 .top_companies {
                     text-align: center;
                 }
@@ -208,9 +221,48 @@
                     
                 }
                 button:hover {
-                background-color: var(--clr-accent);
-                color: white;
+                    background-color: var(--clr-accent);
+                    color: white;
                 }
+
+                #submit-button {
+                    border-radius: 12px;
+                    transition-duration: 0.3s;
+                }
+
+                #submit-button:hover {
+                    background-color: var(--clr-dark);
+                    color: white;
+                }
+                .form-control {
+                    width: 25%;
+                }
+
+                #fname #lname #email {
+                    width: 95%;
+                }
+
+                .contact-us {
+                    display: flex;
+                    width: 100%;
+                    padding: .6rem 1.5rem 0 1.5rem;
+                    border-color: var(--clr-dark);
+                }
+
+                #teamphoto {
+                    margin-left: 20%;
+                }
+
+                .techlabsteam {
+                    text-align: center;
+                    font-size: var(--fs-h2);
+                }
+
+                #top_companies_img {
+                    margin-right: 15%;
+                    margin-bottom: 5%;
+                }
+
             </style>
         
 </head>
@@ -219,6 +271,7 @@
                 <a href="#contact" class="nav_link">Contact</a>
                 <a href="#insights" class="nav_link">Insights</a>
                 <a href="#home" class="nav_link">Home</a>
+                <a href="#techlab" class="nav_link">Corona Job Market</a>
             </div>
             <section id="home"> 
                 <p>The coronavirus pandemic has affected the world as we know it, and numerous industries and businesses are suffering (or, in some cases, gaining) from its powerful impact.</p>
@@ -242,19 +295,19 @@
             <p class="header"><strong>Where to look for a job in Germany right now?</strong></p>
             <div class="dashboard">
                 <div class="top_companies"><p><strong>Most active companies looking for you right now</strong></p><br>
-                <img src=https://i.postimg.cc/6qYbfSHS/top-companies.png style="vertical-align: bottom; width: 50vh;">
+                <img src=https://i.postimg.cc/6qYbfSHS/top-companies.png id="top_companies_img" style="vertical-align: bottom; width: 50vh;">
                 <div class="top_cities">
                     <h2>
-                        <strong>Top 3 Cities</strong> 
+                        <strong>Top 3 Cities</strong><br>Average number of jobs posted daily
                     </h2>
                     <div class="city">
-                        <p>Berlin</p>
+                        <p>Berlin - 6400</p>
                     </div>
                     <div class="city">
-                        <p>München</p>
+                        <p>München - 4329</p>
                     </div>
                     <div class="city">
-                        <p>Hamburg</p>
+                        <p>Hamburg - 4181</p>
                     </div> 
                 </div>
                 </div>
@@ -273,11 +326,12 @@
                     <img id="vollzeit" src="https://i.postimg.cc/k5DkTWLG/daily-new-jobs.png" width="100%" height="75%"></div>
             </div>
             
-            
             </section>
 
             <section id="contact"> 
-            <h2>Interested to see this in your country?</h2>
+            <div class="contact-us">
+            <div class="contact-form">
+            <h2><strong>Interested to see this in your country?</strong> </h2>
             <p>Help us launch this in your country.</p>
             <form>
                 <label for="fname">First name:</label><br>
@@ -285,7 +339,7 @@
                 <label for="lname">Last name:</label><br>
                 <input type="text" id="lname" name="lname" placeholder="Please write your last name here" required><br>
                 <label for="email">E-mail:</label><br>
-                <input type="text" id="email" name="email" placeholder="Please write your e-mail here" required><br>
+                <input type="text" id="email" name="email" placeholder="Please write your e-mail" required><br>
                 <label for="country">Country</label><span style="color: red !important; display: inline; float: none;">*</span>      
                 <select id="country" name="country" class="form-control">
                 <option value="Afghanistan">Afghanistan</option>
@@ -536,8 +590,14 @@
 
                 <label for="message">Message:</label><br>
                 <textarea rows="4" cols="50" name="comment" form="usrform" placeholder="Please enter message here..."></textarea><br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" id="submit-button">
             </form>
+            </div>  
+            <div class="the-team">
+            <p class="techlabsteam">TechLabs 2020 - Team Job Market</p>
+            <img id="teamphoto" src="https://i.postimg.cc/wMgh8FBg/us.png" width="60%" height="80%">
+            </div>
+        </div>
         </section>
 </body>
 </html>
