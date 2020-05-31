@@ -38,7 +38,7 @@
     
                     --clr-light: #fff;
                     --clr-dark: #303030;
-                    --clr-accent: #3f3f44;
+                    --clr-accent: #16e0bd;
     
                     --fs-h1: 3rem;
                     --fs-h2: 2.25rem;
@@ -119,7 +119,6 @@
                     width: 100%;
                     padding: .6rem 1.5rem 0 1.5rem;
                     border-color: var(--clr-dark);
-                    text-align: center;
                 }
                 .jobseeker_type {
                     display: flex;
@@ -162,22 +161,56 @@
                 
                 #contact {
                     background-color: var(--clr-accent);
-			color: white;
                 }
-		
-		#country {
-    			width: 300px;
-		}
-                
-                .table, .table td, .table th {
-	                border: 1px solid #949494;
-	                border-collapse: collapse;
-	                text-align: center;
+
+                .trendline {
+                    font-size: var(--fs-h3);
+                    text-align: center;
                 }
-		
-		input[type=submit] {
-			color:black
-		}
+                .trendline p {
+                    font-size: 15px;
+                    border-style: dashed;
+                    border-width:1.5px;
+                    border-color:black;
+                    width: 450px;
+                    height: 50px;
+                    padding:10px;
+                    margin-left: 40px;
+                }
+                .top_companies p {
+                    font-size: 15px;
+                    border-style: dashed;
+                    border-width:1.5px;
+                    border-color:black;
+                    width: 450px;
+                    height: 50px;
+                    padding:10px;
+                    margin-right: 40px;
+                }
+
+                .top_cities h2 {
+                    font-size: 15px;
+                    border-style: dashed;
+                    border-width:1.5px;
+                    border-color:black;
+                    width: 450px;
+                    height: 50px;
+                    padding:10px;
+                    margin-right: 40px;
+                }
+                .top_companies {
+                    text-align: center;
+                }
+
+                button {
+                    border-radius: 12px;
+                    transition-duration: 0.3s;
+                    
+                }
+                button:hover {
+                background-color: var(--clr-accent);
+                color: white;
+                }
             </style>
         
 </head>
@@ -202,18 +235,18 @@
                 <h2><strong>3.Those looking for a career change</strong></h2>
                 <p>This refers to people who are currently staying at a job but have been thinking about a career change, before or after the arrival of the pandemic.</p></div>
                 </div>
-                <p style="text-align:center"> If you are employed as your industry is not heavily affected by the crisis and you’re happy at work, then relax. Wash your hands and stay in your home office :) <br> However, if you are in one of the above categories or feel like there are less jobs being posted, read on to observe the impact of the coronavirus on the job market. </p>
+                <p> If you are employed, your industry is not heavily affected by the crisis and you’re happy at work, then relax. Wash your hands and stay in your home office. :) However, if you are in one of the above categories or feel like there are less jobs being posted and that not many positions are entry level, read on to observe the impact of the coronavirus on the job market, and gather some insights. </p>
 
             </section>
             <section id="insights"> 
-            <p class="header"><strong>Where to look for a job in Germany right now</strong></p>
+            <p class="header"><strong>Where to look for a job in Germany right now?</strong></p>
             <div class="dashboard">
-                <div class="top_companies"><h3>Most active companies looking for you right now</h3>
-                    <button onclick="twoweeks()">Last two weeks</button>
-                    <button onclick="oneweek()">Last week</button><br><br>
-                <img id="twoweeks" src="https://i.postimg.cc/6qYbfSHS/top-companies.png" width="80%"><div class="top_cities"></div><br><br>
-                    <h3>Top 3 Cities</h3><br>
-                    <!--
+                <div class="top_companies"><p><strong>Most active companies looking for you right now</strong></p><br>
+                <img src=https://i.postimg.cc/6qYbfSHS/top-companies.png style="vertical-align: bottom; width: 50vh;">
+                <div class="top_cities">
+                    <h2>
+                        <strong>Top 3 Cities</strong> 
+                    </h2>
                     <div class="city">
                         <p>Berlin</p>
                     </div>
@@ -222,36 +255,22 @@
                     </div>
                     <div class="city">
                         <p>Hamburg</p>
-                    </div>*/ -->
-                    <table class = "table" style="width:80%;margin-left:auto;margin-right:auto;">
-			<tr>
-				<th>City</th>
-				<th>Average number of jobs posted daily</th>
-			</tr>
-			<tr>
-				<td>Berlin</td>
-				<td>6400</td>
-			</tr>
-			<tr>
-				<td>München</td>
-				<td>4329</td>
-			</tr>
-    			<tr>
-				<td>Hamburg</td>
-				<td>4181</td>
-			</tr>
-		</table>
-                    
-                
+                    </div> 
+                </div>
                 </div>
                 <div class="folium-map" id="map_id" ></div>
-                <div class="trendline"><h3>How job openings have developed over time</h3>
-                    <button onclick="overall()">All job types</button>
-                    <button onclick="vollzeit()">Full-time</button>
-                    <button onclick="teilzeit()">Part-time</button><br><br>
-                    <img id="vollzeit" src="https://i.postimg.cc/k5DkTWLG/daily-new-jobs.png" width="80%">
-		    </div>
-		    
+                <div class="trendline"><p><strong>How job openings have developed over the past two weeks</strong> </p><br>
+                    <button onclick="vollzeit()">Vollzeit</button>
+                    <button onclick="teilzeit()">Teilzeit</button>
+                    <button onclick="festanstellung()">Festanstellung</button>
+                    <button onclick="freiemitarbeit()">Freie Mitarbeit</button>
+                    <button onclick="minijob()">Minijob</button><br><br>
+                    <button onclick="praktikum()">Praktikum</button>
+                    <button onclick="befristet()">Befristet</button>
+                    <button onclick="ausbildung()">Ausbildung</button>
+                    <button onclick="werkvertrag()">Werkvertrag</button>
+                    <button onclick="aufkommission()">Auf Kommission</button><br><br>
+                    <img id="vollzeit" src="https://i.postimg.cc/k5DkTWLG/daily-new-jobs.png" width="100%" height="75%"></div>
             </div>
             
             
@@ -523,20 +542,35 @@
 </body>
 </html>
     <script>
-        function overall() {
-            document.getElementById("vollzeit").src = "https://i.postimg.cc/k5DkTWLG/daily-new-jobs.png";
-        }
         function vollzeit() {
             document.getElementById("vollzeit").src = "https://i.postimg.cc/fRvwG7Hv/vollzeit.png";
         }
         function teilzeit() {
-            document.getElementById("vollzeit").src = "https://i.postimg.cc/FsRgdGSY/teilzeit.png";    
+            document.getElementById("vollzeit").src = "https://i.postimg.cc/FsRgdGSY/teilzeit.png";
         }
-        function twoweeks() {
-            document.getElementById("twoweeks").src = "https://i.postimg.cc/6qYbfSHS/top-companies.png";
+        function festanstellung() {
+            document.getElementById("vollzeit").src = "https://i.postimg.cc/FRT2QXnr/festanstellung.png";
         }
-        function oneweek() {
-            document.getElementById("twoweeks").src = "https://i.postimg.cc/N0ZyRR7N/7days.png";    
+        function freiemitarbeit() {
+            document.getElementById("vollzeit").src = "https://i.postimg.cc/8zdXSVj2/freie-mitarbeit.png";
+        }
+        function minijob() {
+            document.getElementById("vollzeit").src = "https://i.postimg.cc/zBy95cmT/minijob.png";
+        }
+        function praktikum() {
+            document.getElementById("vollzeit").src = "https://i.postimg.cc/8cVw3KTp/praktikum.png";
+        }
+        function befristet() {
+            document.getElementById("vollzeit").src = "https://i.postimg.cc/hv64cd3t/befristet.png";
+        }
+        function ausbildung() {
+            document.getElementById("vollzeit").src = "https://i.postimg.cc/dQrJyLXr/ausbildung.png";
+        }
+        function werkvertrag() {
+            document.getElementById("vollzeit").src = "https://i.postimg.cc/3wzHyTFt/werkvertrag.png";
+        }
+        function aufkommission() {
+            document.getElementById("vollzeit").src = "https://i.postimg.cc/PJQGF8s7/auf-kommission.png";
         }
     </script>
 <script>    
